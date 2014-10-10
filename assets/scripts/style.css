@@ -1,0 +1,327 @@
+/*
+ * 
+ * #3B5998
+ * #090B28
+ * #EDE8A8
+ * #CFC86C
+ * #513A28
+ */
+
+html, body, section, a, nav {
+	margin: 0;
+	padding: 0;
+}
+body {
+	color: #333;
+	font: normal 18px/1.618 'Lato', sans-serif;
+	background-color: #f8f8f8;
+}
+a, a:visited {
+	color: #CFC86C;
+	color: #3B5998;
+	text-decoration: none;
+	-moz-transition: color .2s;
+	-webkit-transition: color .2s;
+	-o-transition: color .2s;
+	transition: color .2s;
+}
+a:hover {
+	color: #85cdff;
+}
+em {
+	font-style: normal;
+	font-size: 1.2em;
+}
+input {
+	height: auto;
+	text-align: center;
+	font: normal 16px/1.618 'Lato', sans-serif;
+}
+input, select, textarea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+section, nav {
+	width: 400px;
+}
+
+/*
+ * General styles
+ */
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style-position: outside;
+}
+ol {
+	list-style-type: lower-roman;
+}
+.find {
+	display: block;
+	width: 32px;
+	height: 32px;
+	background: transparent center center no-repeat;
+}
+.jump {
+	display: inline-block;
+	position: relative;
+	top: 0;
+	transition: top .3s, background-color .3s;
+}
+.jump:hover, .jump:active {
+	top: -7px;
+	background-color: #85cdff;
+}
+#main {
+	margin: 50px auto;
+}
+#main input[name="q"] {
+	float: left;
+	margin: 10px;
+	padding: 5px;
+	width: 324px;
+	border: 2px solid #ddd;
+	background-color: transparent;
+	transition: border-color .3s;
+}
+#main input[name="q"]:focus {
+	border-color: #85cdff;
+}
+#main .find {
+	float: left;
+	margin: 15px 5px auto 5px;
+	background: #3B5998 url('../icons/32.search-inv-f8.png');
+	transition: background-color .3s;
+}
+#main .find:hover, #main .find:active {
+	background-color: #85cdff;
+}
+#status {
+	margin: 0 auto 25px auto;
+	display: block;
+	width: 100%;
+	height: 20px;
+	text-align: center;
+	font-style: italic;
+}
+#results {
+	list-style-type: none;
+}
+
+/*
+ * Navigation, icons
+ */
+nav {
+	margin: 20px auto;
+	padding: 15px 0;
+	text-align: center;
+	border-top: 1px dotted #ddd;
+}
+nav a {
+	margin: 0 5px;
+	width: 32px;
+	height: 32px;
+	background: #EDE8A8 center center no-repeat;
+	background: #3B5998 center center no-repeat;
+}
+.icon-agency {
+	background-image: url('../icons/32.earth-inv-f8.png');
+}
+.icon-bookmarks {
+	background-image: url('../icons/32.bookmark-inv-f8.png');
+}
+.icon-debug {
+	background-color: #990000;
+	background-image: url('../icons/32.med-inv-f8.png');
+}
+#debug-stack {
+	overflow: auto;
+	padding: 2%;
+	width: 96%;
+	height: 150px;
+	border: 1px solid #fff;
+}
+.icon-info {
+	background-image: url('../icons/32.i-inv-f8.png');
+}
+.icon-locate {
+	background-image: url('../icons/32.loc-inv-f8.png');
+}
+.icon-settings {
+	background-image: url('../icons/32.gear.png');
+}
+.icon-share {
+	background-color: #990000;
+	background-image: url('../icons/32.heart.png');
+}
+
+/*
+ * Dialogs
+ */
+.dialog {
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	display: none;
+	color: #fff;
+	background: transparent url('../icons/shade.png') repeat;
+}
+.dialog > div {
+	position: relative;
+	display: block;
+	margin: 20px auto;
+	padding: 10px;
+	width: 400px;
+	font-size: 0.9em;
+}
+.dialog > div > div {
+	margin: 5px auto;
+}
+.dialog h1 {
+	margin: 0;
+}
+.dialog h1 span {
+	margin: 0 5px;
+	font-size: 0.5em;
+}
+.dialog .close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	display: block;
+	width: 32px;
+	height: 32px;
+	background: transparent url('../icons/32.close.w.png') center center no-repeat;
+}
+.dialog a {
+	color: #fff;
+	font-weight: bold;
+}
+.dialog a:hover {
+	color: #85cdff;
+}
+.dialog form {
+	text-align: center;
+}
+.dialog input[type="text"], .dialog select, .dialog textarea {
+	margin: 10px 1%;
+	padding: 3%;
+	width: 92%;
+	color: #fff;
+	border: 2px solid #aaa;
+	background-color: transparent;
+	transition: border-color .3s;
+}
+.dialog input[type="text"]:focus, .dialog select:focus, .dialog textarea:focus {
+	border-color: #fff;
+}
+.dialog .find {
+	margin: 15px auto 0 auto;
+	background-image: url('../icons/32.search.w.png');
+}
+.dialog .find:hover, .dialog .find:active {
+	background-color: transparent;
+}
+.dialog .loading {
+	background-image: url('../icons/32.load.png');
+}
+.dialog .row {
+	margin: 2px 0;
+	width: 100%;
+	clear: both;
+}
+.dialog .row .col2 {
+	float: left;
+	margin: 0 .5%;
+	width: 49%;
+}
+.loading {
+	display: block;
+	margin: 10px auto;
+	height: 32px;
+	width: 32px;
+	background: transparent center center no-repeat;
+	-webkit-animation: loading 1s linear 0s infinite;
+	-moz-animation: loading 1s linear 0s infinite;
+	-ms-animation: loading 1s linear 0s infinite;
+	-o-animation: loading 1s linear 0s infinite;
+	animation: loading 1s linear 0s infinite;
+}
+@-webkit-keyframes loading {
+	from { transform: rotate(0deg); } to { transform: rotate(360deg); }
+}
+@-moz-keyframes loading {
+	from { transform: rotate(0deg); } to { transform: rotate(360deg); }
+}
+@-ms-keyframes loading {
+	from { transform: rotate(0deg); } to { transform: rotate(360deg); }
+}
+@-o-keyframes loading {
+	from { transform: rotate(0deg); } to { transform: rotate(360deg); }
+}
+@keyframes loading {
+	from { transform: rotate(0deg); } to { transform: rotate(360deg); }
+}
+
+/*
+ * Miscellaneous
+ */
+.center {
+	text-align: center;
+}
+.clr {
+	clear: both;
+}
+.h {
+	background: transparent url('../icons/h.png') repeat;
+}
+.right {
+	text-align: right;
+}
+.shade {
+	opacity: .5;
+}
+.shade50 {
+	background: transparent url('../icons/back.white.50.png') repeat;
+}
+
+@media only screen and (max-width: 479px) {
+	
+	#main, section {
+		width: 100%;
+	}
+	
+	#main {
+		margin: 40px auto 0 auto;
+	}
+	#main input[name="q"] {
+		float: none;
+		margin: 0 5%;
+		padding: 2%;
+		width: 85%;
+	}
+	#main .find {
+		float: none;
+		margin: 15px auto;
+	}
+	
+	nav {
+		padding: 5%;
+		width: 90%;
+	}
+	
+	.dialog > div {
+		margin: 3% auto;
+		padding: 20px 5% 5% 5%;
+		width: 84%;
+	}
+	.dialog input[type="text"] {
+		margin: 5%;
+		padding: 2%;
+		width: 86%;
+	}
+	
+}
